@@ -22,3 +22,10 @@
         System.out.println("logger1 == logger2" + (logger1 == logger2));   //comparing both refernces in same object
     }
 }
+
+
+//OUTPUT
+// Logger initialized!
+// [LOG]: First log message
+// [LOG]: Second log message
+// logger1 == logger2 true
