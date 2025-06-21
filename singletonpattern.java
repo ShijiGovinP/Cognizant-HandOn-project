@@ -11,7 +11,7 @@
             return instance;       // To return single instance
         }
         public void log(String message) {
-            System.out.println("[LOG]: " + message);
+            System.out.println("LOG: " + message);
         }
     }
     public static void main(String[] args) {  
