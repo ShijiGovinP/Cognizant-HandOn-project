@@ -11,7 +11,7 @@ public class singleton {
             return instance;
         }
         public void log(String message) {
-            System.out.println("[LOG]: " + message);
+            System.out.println("LOG: " + message);
         }
     }
 
