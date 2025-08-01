@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
-}
+import React, { Component } from 'react';
+import CurrencyConvertor from './CurrencyConvertor';
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  sayHello = () => {
+    console.log("Hello! This is a static message.");
+  };
+
+  handleIncrement = () => {
+    this.increment();
+    this.sayHello();
+  };
+
+  decrement = () => {
+    this.setState({ count: this.state.count - 1 });
+  };
+
+  sayWelcome = (msg) => {
+    alert(msg);
+  };
+
+  handleSyntheticEvent = (event) => {
+    event.preventDefault(); 
+    alert("I was clicked");
+  };
+
+  render() {
+    return (
+      <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+        <h1>Event Examples App</h1>
+
+        <h2>Counter: {this.state.count}</h2>
+
+        <button onClick={this.handleIncrement}>Increment</button>{' '}
+        <button onClick={this.decrement}>Decrement</button>
+
+        <br /><br />
+
+        <button onClick={() => this.sayWelcome("Welcome!")}>Say Welcome</button>
+
+        <br /><br />
+
+        <button onClick={this.handleSyntheticEvent}>Synthetic Event (OnPress)</button>
+
+        <hr />
+
+        <CurrencyConvertor />
+      </div>
+    );
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+export default App;
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
