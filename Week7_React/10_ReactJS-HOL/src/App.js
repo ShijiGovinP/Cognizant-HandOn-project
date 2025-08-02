@@ -1,45 +1,35 @@
 import React from 'react';
+import './App.css';
+import officeImage from './oo.jpeg';
 
 function App() {
-  // Heading text
-  const heading = "Office Space , at Affordable Range";
-
-  // Office details
-  const office = {
+  const element = "Office Space";
+  const ItemName = {
     Name: "DBS",
     Rent: 50000,
     Address: "Chennai"
   };
 
-  // Color based on rent
-  const rentStyle = {
-    color: office.Rent <= 60000 ? 'red' : 'green'
-  };
+  const rentClass = ItemName.Rent <= 60000 ? 'textRed' : 'textGreen';
 
   return (
-    <div style={{ textAlign: 'center', padding: '30px', fontFamily: 'Arial' }}>
-      {/* Page Heading */}
-      <h1 style={{ fontWeight: 'bold' }}>{heading}</h1>
-
-      {/* Office Image */}
+    <div className="App" style={{ textAlign: 'center' }}>
+      <h1>{element} , at Affordable Range</h1>
       <img
-        src="/office.jpeg"
-        alt="Office Space"
-        width="300"
-        height="200"
-        style={{ marginTop: '20px' }}
+        src={officeImage}
+        alt="Office Interior"
+        width="300px"
+        height="300px"
+        style={{ marginTop: '20px', borderRadius: '8px' }}
       />
-
-      {/* Office Info */}
-      <div style={{ marginTop: '30px', textAlign: 'left', display: 'inline-block' }}>
-        <h2>Name: {office.Name}</h2>
-        <h3 style={rentStyle}>Rent: Rs. {office.Rent}</h3>
-        <h3>Address: {office.Address}</h3>
-      </div>
+      <h2 style={{ marginTop: '30px' }}>Name: {ItemName.Name}</h2>
+      <h3 className={rentClass}>Rent: Rs. {ItemName.Rent}</h3>
+      <h3>Address: {ItemName.Address}</h3>
     </div>
   );
 }
 
 export default App;
+  
 
 
