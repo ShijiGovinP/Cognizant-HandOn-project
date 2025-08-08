@@ -1,0 +1,22 @@
+$ git version
+$ git config --global user.name "Shiji Govin P"
+$ git config --global user.email "pshijigovin87@gmail.com"
+$ git config --list
+$ notepad++
+$ notepad++.exe bash -profile
+$ cd GitDemo
+$ git init  GitDemo
+$ echo "This is the Cognizant Company" > welcome.txt
+$ ls -al
+$ git status
+$ git add welcome.txt
+$ git commit
+$ git status
+$ git remote add origin https://github.com/yourusername/GitDemo.git
+$ git push -origin master
+
+
+
+
+
+
